@@ -1,0 +1,152 @@
+\documentclass[12pt,aspectratio=169]{beamer}
+\usepackage{jmc}
+\usepackage{takahashi}
+\usepackage{tikz}
+
+\setbeamersize{text margin left = 4em, text margin right = 4em}
+
+\setlength{\parskip}{\baselineskip}
+
+\title{Liquid Tensor Experiment}
+\author{Johan Commelin}
+
+\def\Z{\mathbb{Z}}
+\def\R{\mathbb{R}}
+\def\Ab{\text{Ab}}
+\def\TopAb{\text{TopAb}}
+\def\AbSh{\text{AbSh}}
+\def\ProFin{\text{ProFin}}
+\def\CompHaus{\text{CompHaus}}
+\def\into{\hookrightarrow}
+\def\Cond{\text{Cond}}
+\def\Set{\text{Set}}
+\def\Mod{\text{Mod}}
+\def\ul{\underline}
+
+\begin{document}
+
+\takahashi{\color{title} Liquid Tensor Experiment}
+
+\takahashi{$\Ab$ is nice}
+
+\takahashi{$\TopAb$ is ugly}
+
+\takahashi{\quad $\R^\delta \to \R$ \quad}
+
+\takahashi{$\AbSh(X)$ is nice}
+
+\takahashi{Profinite sets} 
+
+\takahashi{Condensed sets}
+
+\takahashi{$\CompHaus \into \Cond(\Set)$}
+
+\takahashi{$\Cond(\Ab)$ is nice}
+
+\takahashi{Condensed rings/modules}
+
+\takahashi{Six functor formalism}
+
+\takahashi{Analytic rings}
+
+\takahashi{Analytic geometry}
+
+\takahashi{Applications}
+
+\takahashi{Real analysis}
+
+\takahashi{$\{0.d_1d_2d_3\dots \mid d_i = 0,1,\dots,9\}$}
+
+\takahashi{Scholze's challenge}
+
+\takahashi{Some details}
+
+\begin{frame}{Definition}
+	An \emph{\color{title} analytic ring} $\mathcal A$
+	is a condensed ring $\ul{\mathcal A}$
+
+	\pause
+
+	together with a functor
+	\begin{align*}
+		\{extr.disc.\} &\to \Mod_{\ul{\mathcal A}}^{\Cond} \\
+		S &\mapsto \mathcal A[S]
+	\end{align*}
+
+	\pause
+
+	satisfying some conditions.
+\end{frame}
+
+\begin{frame}{``Measures''}
+	Fix $p \in (0,1] \subset \R$.
+	\pause
+
+	For $S$ finite:
+	\[
+		\R[S]_{\ell^p \le c} =
+		\biggl\{ (a_s)_s \,\biggm\vert\, \sum_{s \in S} \|a_s\|^p \le c \biggr\}
+	\]
+	\pause
+	For $S = \varprojlim_i S_i$ profinite:
+	\[
+		\mathcal M_{p}(S) = \bigcup_c \varprojlim_i \R[S_i]_{\ell^p \le c}
+	\]
+	\pause
+	\[
+		\mathcal M_{< p}(S) = \varinjlim_{p' < p} \mathcal M_{p'}(S)
+	\]
+\end{frame}
+
+\begin{frame}{Main theorem}
+	Fix $0 < p \le 1$.
+	
+	Then $(\R, \mathcal M_{< p})$ is an analytic ring.
+\end{frame}
+
+\begin{frame}
+	\begin{tikzpicture}
+		\draw[color=title,very thick] (-1,0) -- (0,0) -- (0,-2.3) -- (-1,-2.3);
+		\node at (-.5,-3) {Theorem 9.5};
+		\draw[color=title,very thick] (-1,-3.7) -- (0,-3.7) -- (0,-6) -- (-1,-6);
+		\node at (-.5,-6.5) {Main theorem};
+		\node at (4,-0.6) {Functional analysis};
+		\node at (4,-1.4) {Homological algebra};
+		\node at (4,-4.6) {Condensed mathematics};
+		\node at (4,-5.4) {Categorical reduction steps};
+	\end{tikzpicture}
+\end{frame}
+
+\begin{frame}
+	$\Z((T)) \to \R$
+
+	\pause
+
+	Polyhedral lattices
+
+	\pause
+
+	Normed exactness
+
+	\pause
+
+	Chase inequalities through spectral sequences
+\end{frame}
+
+\begin{frame}{Joint work with}
+	\begin{itemize}
+		\item Peter Scholze
+	\end{itemize}
+
+	The Lean community
+	\begin{itemize}
+		\item Damiano Testa
+		\item Patrick Massot
+		\item Kevin Buzzard
+		\item Riccardo Brasca
+		\item Adam Topaz
+		\item Scott Morrison
+	\end{itemize}
+\end{frame}
+
+\end{document}
